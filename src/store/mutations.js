@@ -21,4 +21,32 @@ export const changeShowName2 = (state, name_value) => {
    */
   state.show_name = name_value
 };
+// ---------------end--------------
 
+
+/**
+ * 设置页脚信息
+ * @param state
+ * @param footerinfo
+ */
+export const setFooterInfo = (state, footerinfo) => {
+  state.footerInfo = footerinfo
+};
+
+/**
+ * 设置文章信息
+ * @param state
+ * @param articleData
+ */
+export const setArticleData = (state, articleData) => {
+  state.articleData = articleData
+};
+
+/**
+ * 设置不带图标的文章列表信息
+ * @param state
+ * @param noPictureArticleListData
+ */
+export const setNoPictureArticleListData = (state, noPictureArticleListData) => {
+  state.noPictureArticleListData = noPictureArticleListData
+};

@@ -1,7 +1,7 @@
 <template>
   <Card class="article_content">
     <div class="img_div">
-      <img style="width: 110px" height="110px" class="article_img" :src="article_data.img_src">
+      <img style="width: 110px" height="110px" class="article_img" :src="articleData.imgSrc">
     </div>
     <div class="thumbs_up">
       <Icon @click="thumbs_up_click" type="md-thumbs-up" size="20"/> &nbsp; <span style="font-size: 14px;">{{ thumbs_up_number }}</span>
@@ -9,7 +9,7 @@
       <Icon @click="thumbs_down_click" type="md-thumbs-down" size="20"/>
     </div>
     <div class="article_title">
-      <span>{{ article_data.article_title }}</span>
+      <span>{{ articleData.articleTitle }}</span>
       <div>
         <Icon type="ios-eye"/>
         100
@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="brief_description">
-      {{ article_data.brief_description }}
+      {{ articleData.briefDescription }}
     </div>
   </Card>
 </template>
@@ -27,13 +27,13 @@
   export default {
     name: "ArticleList",
     props: {
-      article_data: {
+      articleData: {
         type: Object
       }
     },
     data: function () {
       return {
-        thumbs_up_number: this.article_data.thumbs_up,
+        thumbs_up_number: this.articleData.thumbsUp,
         time1: (new Date()).getTime() - 60 * 3 * 1000,
       }
     },
