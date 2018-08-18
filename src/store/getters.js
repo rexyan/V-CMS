@@ -10,7 +10,14 @@ export const gettersMsg = state => state.msg;
 
 
 import * as getDateUtil from '../utils/getDateUtil'
-import {setArticleData, setFooterInfo, setNoPictureArticleListData} from './mutations'
+import {
+  setArticleData,
+  setFooterInfo,
+  setNavList,
+  setNoPictureArticleListData,
+  setCardInfo,
+  setArticleTag
+} from './mutations'
 
 /**
  * 获取footer信息
@@ -33,7 +40,7 @@ export const getFooterInfo = state => {
 export const getArticleData = state => {
   let articleData = getDateUtil.articleDataApi();  // 通过utils获取信息
   if (state.articleData !== articleData) {         // 判断vuex中的值和获取的是否一致
-    setArticleData(state, articleData);                   // 将通过接口获取的接口放入vuex中，并返回结果
+    setArticleData(state, articleData);            // 将通过接口获取的接口放入vuex中，并返回结果
   }
   return state.articleData
 };
@@ -46,7 +53,7 @@ export const getArticleData = state => {
 export const getNoPictureArticleListData = state => {
   let noPictureArticleListData = getDateUtil.noPictureArticleListDataApi(); // 通过utils获取信息
   if (state.noPictureArticleListData !== noPictureArticleListData) {        // 判断vuex中的值和获取的是否一致
-    setNoPictureArticleListData(state, noPictureArticleListData);                  // 将通过接口获取的接口放入vuex中，并返回结果
+    setNoPictureArticleListData(state, noPictureArticleListData);           // 将通过接口获取的接口放入vuex中，并返回结果
   }
   return state.noPictureArticleListData
 };
@@ -62,3 +69,39 @@ export const getIndexBasicInfo = () => {
     noPictureArticleListData: getNoPictureArticleListData,
   }
 };
+
+/**
+ * 获取文章导航菜单栏
+ * @param state
+ * @returns {Array}
+ */
+export const getNavList = state => {
+  let navList = getDateUtil.navListApi();
+  if (state.navList !== navList) {
+    setNavList(state, navList);
+  }
+  return state.navList
+};
+
+/**
+ * 获取热门卡片信息
+ * @param state
+ * @returns {cardInfo|{type}}
+ */
+export const getCardInfo = state => {
+  let cardInfo = getDateUtil.cardInfoApi();
+  if (state.cardInfo !== cardInfo) {
+    setCardInfo(state, cardInfo);
+  }
+  return state.cardInfo
+};
+
+
+export const getArticleTag = state => {
+  let articleTag = getDateUtil.articleTagApi();
+  if (state.articleTag !== articleTag) {
+    setArticleTag(state, articleTag);
+  }
+  return state.articleTag
+};
+

@@ -50,3 +50,26 @@ export const setArticleData = (state, articleData) => {
 export const setNoPictureArticleListData = (state, noPictureArticleListData) => {
   state.noPictureArticleListData = noPictureArticleListData
 };
+
+/**
+ * 设置菜单栏
+ * @param state
+ * @param navList
+ */
+export const setNavList = (state, navList) => {
+  state.navList = navList
+};
+
+/**
+ * 首页热门卡片
+ * @param state
+ * @param cardInfo
+ */
+export const setCardInfo = (state, cardInfo) => {
+  state.cardInfo = cardInfo
+};
+
+
+export const setArticleTag = (state, tag) => {
+  state.articleTag  = tag
+};
