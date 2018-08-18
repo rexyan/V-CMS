@@ -16,7 +16,8 @@ import {
   setNavList,
   setNoPictureArticleListData,
   setCardInfo,
-  setArticleTag
+  setArticleTag,
+  setCarousel
 } from './mutations'
 
 /**
@@ -97,6 +98,11 @@ export const getCardInfo = state => {
 };
 
 
+/**
+ * 获取文章标签
+ * @param state
+ * @returns {Array}
+ */
 export const getArticleTag = state => {
   let articleTag = getDateUtil.articleTagApi();
   if (state.articleTag !== articleTag) {
@@ -105,3 +111,15 @@ export const getArticleTag = state => {
   return state.articleTag
 };
 
+/**
+ * 获取轮播图地址
+ * @param state
+ * @returns {Array}
+ */
+export const getCarousel = state => {
+  let carousel = getDateUtil.carouselApi();
+  if (state.carousel !== carousel) {
+    setCarousel(state, carousel);
+  }
+  return state.carousel
+};

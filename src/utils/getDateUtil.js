@@ -95,9 +95,13 @@ export const cardInfoApi = () => {
   return cardInfo
 };
 
-export const articleTagApi = () =>{
+export const articleTagApi = () => {
   return ['Nginx', 'Vue', 'Java', 'PHP', 'Lua']
 };
 
 
+export const carouselApi = () => {
+  let data = ['http://blog.wdyun.cn/content/uploadfile/201503/7b1a1425208684.png', 'http://ww4.sinaimg.cn/large/991a4176gw1f0prbvc4zmj20ws09qdld.jpg']
+  return data
+};
 

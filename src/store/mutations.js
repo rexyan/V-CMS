@@ -69,7 +69,20 @@ export const setCardInfo = (state, cardInfo) => {
   state.cardInfo = cardInfo
 };
 
-
+/**
+ * 设置文章标签
+ * @param state
+ * @param tag
+ */
 export const setArticleTag = (state, tag) => {
-  state.articleTag  = tag
+  state.articleTag = tag
+};
+
+/**
+ * 设置轮播图
+ * @param state
+ * @param carousel
+ */
+export const setCarousel = (state, carousel) => {
+  state.carousel = carousel
 };

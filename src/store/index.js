@@ -16,8 +16,9 @@ const state = {
   articleData: [], // 带图文的文章信息
   noPictureArticleListData: [], // 不带图文的文章信息
   navList: [],  // 菜单栏
-  cardInfo:[],  // 热门卡片
-  articleTag:[] // tag标签
+  cardInfo: [],  // 热门卡片
+  articleTag: [],  // tag标签
+  carousel: [] // 轮播图
 };
 
 

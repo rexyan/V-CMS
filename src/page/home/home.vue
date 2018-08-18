@@ -18,16 +18,7 @@
       <Content>
         <Content>
           <Carousel autoplay loop class="sowingMap">
-            <CarouselItem>
-              <div class="demo-carousel">
-                <img src="http://ww4.sinaimg.cn/large/991a4176gw1f0prbvc4zmj20ws09qdld.jpg">
-              </div>
-            </CarouselItem>
-            <CarouselItem>
-              <div class="demo-carousel">
-                <img src="http://blog.wdyun.cn/content/uploadfile/201503/7b1a1425208684.png">
-              </div>
-            </CarouselItem>
+            <Carousel :imageUrl="item" v-for="item in getCarousel"></Carousel>
           </Carousel>
         </Content>
         <Card class="mainBody">
@@ -80,10 +71,11 @@
   import {mapGetters, mapActions, mapState, mapMutations} from 'Vuex';
   import ArticleList from '../../components/ArticleList.vue'
   import HotCard from "../../components/HotCard";
+  import Carousel from "../../components/Carousel";
 
   export default {
     name: 'home',
-    components: {HotCard, ArticleList},
+    components: {Carousel, HotCard, ArticleList},
     computed: {
       hotCardOne: function () {
         return this.getCardInfo[0]
@@ -97,11 +89,12 @@
         'getNoPictureArticleListData',
         'getNavList',
         'getCardInfo',
-        'getArticleTag'
+        'getArticleTag',
+        'getCarousel'
       ])
     },
     mounted: function () {
-      console.log(this.getArticleTag)
+      console.log(this.getCarousel)
     }
   }
 </script>
