@@ -58,7 +58,8 @@
   .img_div {
     width: 140px;
     margin-left: 30px;
-    max-height: 140px
+    max-height: 140px;
+    cursor: pointer;
   }
 
   .article_img {
@@ -75,6 +76,7 @@
   .article_title {
     margin-left: 190px;
     margin-top: -140px;
+    cursor: pointer;
   }
 
   .article_title span {

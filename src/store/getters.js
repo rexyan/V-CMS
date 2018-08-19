@@ -17,7 +17,7 @@ import {
   setNoPictureArticleListData,
   setCardInfo,
   setArticleTag,
-  setCarousel
+  setCarousel, setAdvertisement
 } from './mutations'
 
 /**
@@ -122,4 +122,18 @@ export const getCarousel = state => {
     setCarousel(state, carousel);
   }
   return state.carousel
+};
+
+
+/**
+ * 返回广告/通知信息
+ * @param state
+ * @returns {Array}
+ */
+export const getAdvertisement = state => {
+  let advertisement = getDateUtil.advertisementApi();
+  if (state.advertisement !== advertisement) {
+    setAdvertisement(state, advertisement);
+  }
+  return state.advertisement
 };

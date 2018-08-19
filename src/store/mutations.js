@@ -86,3 +86,12 @@ export const setArticleTag = (state, tag) => {
 export const setCarousel = (state, carousel) => {
   state.carousel = carousel
 };
+
+/**
+ * 设置广告/通知栏位
+ * @param state
+ * @param advertisement
+ */
+export const setAdvertisement = (state, advertisement) =>{
+   state.advertisement = advertisement
+};

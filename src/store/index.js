@@ -18,7 +18,8 @@ const state = {
   navList: [],  // 菜单栏
   cardInfo: [],  // 热门卡片
   articleTag: [],  // tag标签
-  carousel: [] // 轮播图
+  carousel: [], // 轮播图
+  advertisement:[], // 广告/通知
 };
 
 

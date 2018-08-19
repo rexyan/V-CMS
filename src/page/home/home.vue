@@ -1,26 +1,15 @@
 <template>
   <div class="layout">
     <Layout>
-      <Header>
-        <Menu mode="horizontal" theme="dark" active-name="1">
-          <!--Logo-->
-          <div class="layout-logo"></div>
 
-          <!--导航栏信息-->
-          <div class="layout-nav">
-            <MenuItem name='item.name' v-for="item in getNavList">
-              <Icon type="ios-navigate"></Icon>
-              <router-link :to="item.url">{{ item.name }}</router-link>
-            </MenuItem>
-          </div>
-        </Menu>
-      </Header>
+      <!-- 导航栏 -->
+      <PageHeader :navList="getNavList"></PageHeader>
+
       <Content>
-        <Content>
-          <Carousel autoplay loop class="sowingMap">
-            <Carousel :imageUrl="item" v-for="item in getCarousel"></Carousel>
-          </Carousel>
-        </Content>
+
+        <!-- 幻灯片 -->
+        <CarouselFigure :imageUrlList="getCarousel"></CarouselFigure>
+
         <Card class="mainBody">
           <!--主体内容部分-->
           <Row>
@@ -30,22 +19,24 @@
               <HotCard class="hotCardRight" :hcardInfo="hotCardTwo"></HotCard>
               <ArticleList :articleData="item" v-for="item in getArticleData"></ArticleList>
             </Col>
-            <Col :xs="1" :sm="1" :md="1" :lg="1">&nbsp;</Col>
+            <Col :xs="1" :sm="1" :md="1" :lg="1">
+
+            </Col>
             <Col :xs="6" :sm="6" :md="6" :lg="6">
+
               <!--右边栏模块-->
-              <Card class="Notice">
-                <img src="">
-                <h3>信息：今日第 1765 位来客.</h3>
-              </Card>
+              <Advertisement :AdInfo="item" v-for="item in getAdvertisement"></Advertisement>
               <Card class="Tag">
                 <Tag v-for="item in getArticleTag">{{ item }}</Tag>
               </Card>
             </Col>
           </Row>
+
           <Card class="NoPictureArticleLeft">
             <Table :columns="getNoPictureArticleListData.columnsLeft" :data="getNoPictureArticleListData.dataLeft">
             </Table>
           </Card>
+
           <Card class="NoPictureArticleRight">
             <Table :columns="getNoPictureArticleListData.columnsRight" :data="getNoPictureArticleListData.dataRight">
             </Table>
@@ -59,6 +50,7 @@
       <Footer class="layout-footer-center">
         <!--底部信息-->
         {{ getFooterInfo }}
+
         <!--返回顶部按钮-->
         <BackTop></BackTop>
       </Footer>
@@ -66,16 +58,17 @@
   </div>
 </template>
 
-
 <script>
   import {mapGetters, mapActions, mapState, mapMutations} from 'Vuex';
   import ArticleList from '../../components/ArticleList.vue'
   import HotCard from "../../components/HotCard";
-  import Carousel from "../../components/Carousel";
+  import CarouselFigure from "../../components/CarouselFigure";
+  import Advertisement from "../../components/Advertisement"
+  import PageHeader from "../../components/PageHeader";
 
   export default {
     name: 'home',
-    components: {Carousel, HotCard, ArticleList},
+    components: {CarouselFigure, HotCard, ArticleList, Advertisement, PageHeader},
     computed: {
       hotCardOne: function () {
         return this.getCardInfo[0]
@@ -90,11 +83,12 @@
         'getNavList',
         'getCardInfo',
         'getArticleTag',
-        'getCarousel'
+        'getCarousel',
+        'getAdvertisement'
       ])
     },
     mounted: function () {
-      console.log(this.getCarousel)
+      // console.log(this.getCarousel)
     }
   }
 </script>
@@ -106,23 +100,6 @@
     position: relative;
     border-radius: 4px;
     overflow: hidden;
-  }
-
-  .layout-logo {
-    width: 100px;
-    height: 30px;
-    background: #5b6270;
-    border-radius: 3px;
-    float: left;
-    position: relative;
-    top: 15px;
-    left: 20px;
-  }
-
-  .layout-nav {
-    width: 420px;
-    margin: 0 auto;
-    margin-right: 20px;
   }
 
   .layout-footer-center {
@@ -140,14 +117,6 @@
     margin-bottom: 20px;
   }
 
-  .sowingMap {
-    max-width: 67%;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-
   .mainBody {
     border: 1px solid #CCC;
     max-width: 67%;
@@ -162,16 +131,10 @@
     margin-right: auto
   }
 
-  .Notice {
-    width: 260px;
-    border: 1px solid #CCC;
-    margin-bottom: 20px;
-    text-align: center
-  }
-
   .Tag {
     width: 260px;
     border: 1px solid #CCC;
+    margin-left: 18%;
   }
 
   .NoPictureArticleLeft {
