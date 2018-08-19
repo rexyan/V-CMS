@@ -6,6 +6,7 @@
     <!-- 登录主体部分 -->
     <Row>
       <Col span="6" class="mainBody">
+        <h2 class="loginPageTitle">注册</h2>
         <Form :label-width="80">
           <FormItem label="用户名">
             <Input type="text"></Input>
@@ -18,6 +19,16 @@
             <Button style="margin-left: 8px">取消</Button>
           </FormItem>
         </Form>
+      </Col>
+    </Row>
+
+    <Row style="margin-top: 31%;margin-bottom: 2%" type="flex" justify="space-around" class="code-row-bg">
+      <Col span="6">
+        <Card>
+          <div style="text-align:center;">
+            <img style="height: 70px;width: 400px;" src="https://file.iviewui.com/asd/asd-vuebook.png">
+          </div>
+        </Card>
       </Col>
     </Row>
 
@@ -48,16 +59,21 @@
 
 <style scoped>
   .mainBody {
-    margin: 5% auto auto auto;
+    margin: 10% auto auto auto;
     position: absolute;
     top: 0;
     left: -40px;
     right: 0;
     bottom: 0;
+    text-align:center;
   }
 
   .footerFixed {
     position: fixed;
     bottom: 0;
+  }
+  .loginPageTitle{
+    margin-left: 17%;
+    margin-bottom: 10%;
   }
 </style>
