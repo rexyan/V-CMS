@@ -45,15 +45,10 @@
           <!--分页信息-->
           <Page class="Page" :total="40" size="small" show-elevator show-sizer/>
         </Card>
+
+        <!-- 底部信息 -->
+        <PageFooter :footerInfo="getFooterInfo"></PageFooter>
       </Content>
-
-      <Footer class="layout-footer-center">
-        <!--底部信息-->
-        {{ getFooterInfo }}
-
-        <!--返回顶部按钮-->
-        <BackTop></BackTop>
-      </Footer>
     </Layout>
   </div>
 </template>
@@ -65,10 +60,11 @@
   import CarouselFigure from "../../components/CarouselFigure";
   import Advertisement from "../../components/Advertisement"
   import PageHeader from "../../components/PageHeader";
+  import PageFooter from "../../components/PageFooter";
 
   export default {
     name: 'home',
-    components: {CarouselFigure, HotCard, ArticleList, Advertisement, PageHeader},
+    components: {PageFooter, CarouselFigure, HotCard, ArticleList, Advertisement, PageHeader},
     computed: {
       hotCardOne: function () {
         return this.getCardInfo[0]
@@ -100,15 +96,6 @@
     position: relative;
     border-radius: 4px;
     overflow: hidden;
-  }
-
-  .layout-footer-center {
-    text-align: center;
-    border: 1px solid #CCC;
-    min-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
   }
 
   .hotCardRight {
