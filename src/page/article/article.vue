@@ -200,6 +200,7 @@
     margin-right: auto;
     height: 100%;
     z-index: 999;
+    margin-top: 20px;
   }
 
   .mainBody Row {
