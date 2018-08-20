@@ -5,6 +5,7 @@ const vuex_test = r => require.ensure([], () => r(require('@/page/vuex-test/Vuex
 const index = r => require.ensure([], () => r(require('@/page/home/home')), 'index'); // 主页
 const login = r => require.ensure([], () => r(require('@/page/login/login')), 'login'); // 登录
 const register = r => require.ensure([], () => r(require('@/page/register/register')), 'register'); // 注册
+const article = r => require.ensure([], () => r(require('@/page/article/article')), 'article'); // 文章
 export default [{
   path: '/',
   component: App, //顶层路由，对应index.html
@@ -29,6 +30,10 @@ export default [{
     {
       path: '/register',
       component: register
+    },
+    {
+      path: '/article',
+      component: article
     }
   ]
 }]

@@ -15,7 +15,7 @@
           <Row>
             <Col :xs="17" :sm="17" :md="17" :lg="17">
               <!--文章列表部分-->
-              <HotCard :hcardInfo="hotCardOne"></HotCard>
+              <HotCard class="hotCardleft" :hcardInfo="hotCardOne"></HotCard>
               <HotCard class="hotCardRight" :hcardInfo="hotCardTwo"></HotCard>
               <ArticleList :articleData="item" v-for="item in getArticleData"></ArticleList>
             </Col>
@@ -97,11 +97,19 @@
     border-radius: 4px;
     overflow: hidden;
   }
+  .hotCardleft{
+    width: 49%;
+    cursor: pointer;
+    text-align: center
+  }
 
   .hotCardRight {
     margin-left: 430px;
     margin-top: -29%;
     margin-bottom: 20px;
+    width: 49%;
+    cursor: pointer;
+    text-align: center
   }
 
   .mainBody {

@@ -13,14 +13,9 @@
 </script>
 
 <style scoped>
-  .hcard {
-    width: 49%;
-    cursor: pointer;
-    text-align: center
-  }
 
   .hcard img {
     height: 180px;
-    width:180px;
+    width: 180px;
   }
 </style>
